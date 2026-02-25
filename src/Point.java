@@ -8,7 +8,19 @@ public class Point {
     }
 
     public String toSvg() {
-        String napis = "<circle r=\"45\" cx=\"" + x + "\"" + "\" cy=\"" + y + "\" fill=\"red\" />";
+        String napis = "<circle r=\"45\" cx=\"" + x +  "\" cy=\"" + y + "\" fill=\"red\" />";
         return napis;
+    }
+
+    public void translate(double dx, double dy) {
+        x = x + dx;
+        y = y + dy;
+    }
+
+    public Point translated(double dx, double dy) {
+        Point point = new Point();
+        point.x = x + dx;
+        point.y = y + dy;
+        return point;
     }
 }
