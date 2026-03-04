@@ -1,6 +1,37 @@
 public class Point {
-    public double x=5;
-    public double y=10;
+    private double x=5;
+    private double y=10;
+
+    public Point() {
+        x = 0;
+        y = 0;
+    }
+
+    public Point(Point oldPoint) {
+        this.x = oldPoint.getX();
+        this.y = oldPoint.getY();
+    }
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+
+    public void setY(double y) {
+        this.y = y;
+    }
 
     public String toString() {
         String napis = "x=" + x + " y=" + y;
