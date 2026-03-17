@@ -9,8 +9,7 @@ public class Polygon {
         }
     }
 
-    public Polygon(Polygo other) {
+    public Polygon(Polygon other) {
         this(other.points);
-
     }
 }
