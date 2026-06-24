@@ -1,23 +1,24 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.printf("Hello and welcome!\n");
-        Point point = new Point();
-        System.out.println(point.getX() + " " + point.getY());
-        //point.x = 7;
-        point.setX(7);
-        System.out.println(point.getX() + " " + point.getY());
-        Point point1 = new Point();
-        System.out.println(point1.toString());
-        System.out.println(point1.toSvg());
+        Polygon p1 = new Polygon(new Point[]{
+                new Point(10, 10),
+                new Point(100, 10),
+                new Point(50, 80)
+        });
 
-        Point point2 = new Point();
-        System.out.println("Punkt oryginalny");
-        System.out.println(point2);
-        System.out.println("Punkt przesunięty");
-        point2.translate(1, 1);
-        System.out.println(point2);
-        System.out.println(point2.translated(2, 2));
-        BoundingBox bd = new BoundingBox(1, 0, 0, 2);
+        Polygon p2 = new Polygon(new Point[]{
+                new Point(150, 100),
+                new Point(250, 100),
+                new Point(250, 200),
+                new Point(150, 200)
+        });
+
+        SvgScene scene = new SvgScene();
+
+        scene.addPolygon(p1);
+        scene.addPolygon(p2);
+
+        scene.save("scene.svg");
     }
 
 }

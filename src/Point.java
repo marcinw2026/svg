@@ -1,6 +1,6 @@
 public class Point {
-    private double x=5;
-    private double y=10;
+    private double x;
+    private double y;
 
     public Point() {
         x = 0;
@@ -54,4 +54,5 @@ public class Point {
         point.y = y + dy;
         return point;
     }
+
 }
