@@ -7,9 +7,9 @@ public class Point {
         y = 0;
     }
 
-    public Point(Point oldPoint) {
-        this.x = oldPoint.getX();
-        this.y = oldPoint.getY();
+    public Point(Point other) {
+        this.x = other.x;
+        this.y = other.y;
     }
     public Point(double x, double y) {
         this.x = x;
@@ -33,26 +33,22 @@ public class Point {
         this.y = y;
     }
 
+    @Override
     public String toString() {
-        String napis = "x=" + x + " y=" + y;
-        return napis;
+        return "Point(" + x + ", " + y + ")";
     }
 
     public String toSvg() {
-        String napis = "<circle r=\"45\" cx=\"" + x +  "\" cy=\"" + y + "\" fill=\"red\" />";
-        return napis;
+        return "<circle cx=\"" + x + "\" cy=\"" + y + "\" r=\"5\" fill=\"black\" />\n";
     }
 
     public void translate(double dx, double dy) {
-        x = x + dx;
-        y = y + dy;
+        x += dx;
+        y += dy;
     }
 
     public Point translated(double dx, double dy) {
-        Point point = new Point();
-        point.x = x + dx;
-        point.y = y + dy;
-        return point;
+        return new Point(x + dx, y+ dy);
     }
 
 }
